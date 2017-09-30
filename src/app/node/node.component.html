@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let contact of data; let i = index;" >
+    <span (click)="expand(i)" [ngClass]="{'active' : expanded[i]}">{{contact.name}}</span>
+    <app-node *ngIf="expanded[i]" [data]="contact.contacts"></app-node>
+  </li>
+</ul>
